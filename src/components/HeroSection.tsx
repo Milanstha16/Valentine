@@ -40,7 +40,7 @@ const HeroSection = () => {
         
         <div className="mt-12 animate-fade-in animation-delay-700">
           <span className="text-black inline-block px-6 py-2 bg-secondary/50 rounded-full text-sm text-muted-foreground border border-rose/20">
-            Scroll down to discover my heart 💕
+            Scroll down to my heart 💕
           </span>
         </div>
       </div>
