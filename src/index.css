@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Romantic Valentine Palette */
+    --background: 350 100% 98%;
+    --foreground: 350 30% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 350 30% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 350 30% 20%;
+
+    --primary: 350 80% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 350 60% 95%;
+    --secondary-foreground: 350 30% 30%;
+
+    --muted: 350 30% 96%;
+    --muted-foreground: 350 20% 50%;
+
+    --accent: 40 70% 55%;
+    --accent-foreground: 40 90% 20%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 350 30% 90%;
+    --input: 350 30% 90%;
+    --ring: 350 80% 60%;
+
+    --radius: 1rem;
+
+    /* Custom romantic colors */
+    --blush: 350 60% 92%;
+    --rose: 350 80% 65%;
+    --deep-rose: 350 70% 45%;
+    --gold: 40 70% 55%;
+    --gold-light: 40 60% 75%;
+    --cream: 40 40% 97%;
+
+    /* Gradients */
+    --gradient-romantic: linear-gradient(135deg, hsl(350 60% 92%) 0%, hsl(350 80% 95%) 50%, hsl(0 0% 100%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(350 60% 95%) 0%, hsl(350 70% 97%) 50%, hsl(0 0% 100%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(40 70% 55%) 0%, hsl(40 60% 65%) 100%);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 350 30% 8%;
+    --foreground: 350 20% 95%;
+    --card: 350 30% 12%;
+    --card-foreground: 350 20% 95%;
+    --popover: 350 30% 12%;
+    --popover-foreground: 350 20% 95%;
+    --primary: 350 80% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 350 30% 20%;
+    --secondary-foreground: 350 20% 90%;
+    --muted: 350 30% 18%;
+    --muted-foreground: 350 20% 65%;
+    --accent: 40 70% 50%;
+    --accent-foreground: 40 90% 95%;
+    --border: 350 30% 20%;
+    --input: 350 30% 20%;
+    --ring: 350 80% 60%;
+    --blush: 350 40% 18%;
+    --rose: 350 70% 55%;
+    --deep-rose: 350 60% 40%;
+    --gold: 40 60% 50%;
+    --gold-light: 40 50% 35%;
+    --cream: 40 20% 12%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Quicksand', sans-serif;
+  }
+
+  h1, h2, h3, .font-cursive {
+    font-family: 'Great Vibes', cursive;
+  }
+}
+
+@layer components {
+  .gradient-romantic {
+    background: var(--gradient-romantic);
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .text-gradient-gold {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+@layer utilities {
+  /* Floating hearts animation */
+  @keyframes float-up {
+    0% {
+      transform: translateY(100vh) rotate(0deg) scale(0);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+      transform: translateY(90vh) rotate(10deg) scale(1);
+    }
+    90% {
+      opacity: 0.8;
+    }
+    100% {
+      transform: translateY(-10vh) rotate(360deg) scale(0.5);
+      opacity: 0;
+    }
+  }
+
+  @keyframes float-gentle {
+    0%, 100% {
+      transform: translateY(0) rotate(-3deg);
+    }
+    50% {
+      transform: translateY(-15px) rotate(3deg);
+    }
+  }
+
+  @keyframes pulse-heart {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.15);
+    }
+  }
+
+  @keyframes fade-in-up {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  @keyframes confetti-fall {
+    0% {
+      transform: translateY(-100%) rotate(0deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100vh) rotate(720deg);
+      opacity: 0;
+    }
+  }
+
+  @keyframes heart-burst {
+    0% {
+      transform: scale(0) rotate(0deg);
+      opacity: 1;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1.5) rotate(45deg) translateY(-100px);
+      opacity: 0;
+    }
+  }
+
+  @keyframes wiggle {
+    0%, 100% {
+      transform: rotate(-3deg);
+    }
+    50% {
+      transform: rotate(3deg);
+    }
+  }
+
+  .animate-float-up {
+    animation: float-up 8s ease-in-out infinite;
+  }
+
+  .animate-float-gentle {
+    animation: float-gentle 4s ease-in-out infinite;
+  }
+
+  .animate-pulse-heart {
+    animation: pulse-heart 1.5s ease-in-out infinite;
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 1s ease-out forwards;
+  }
+
+  .animate-shimmer {
+    background: linear-gradient(90deg, transparent, hsl(var(--gold) / 0.3), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
+
+  .animate-wiggle {
+    animation: wiggle 0.5s ease-in-out;
+  }
+
+  .animation-delay-100 { animation-delay: 0.1s; }
+  .animation-delay-200 { animation-delay: 0.2s; }
+  .animation-delay-300 { animation-delay: 0.3s; }
+  .animation-delay-400 { animation-delay: 0.4s; }
+  .animation-delay-500 { animation-delay: 0.5s; }
+  .animation-delay-700 { animation-delay: 0.7s; }
+  .animation-delay-1000 { animation-delay: 1s; }
+
+  /* Polaroid effect */
+  .polaroid {
+    @apply bg-white p-3 pb-12 shadow-xl;
+    transform: rotate(var(--rotation, 0deg));
+  }
+
+  /* Heart hover effect */
+  .heart-hover {
+    @apply transition-all duration-300;
+  }
+  
+  .heart-hover:hover {
+    @apply scale-110;
+    filter: drop-shadow(0 0 8px hsl(var(--rose) / 0.5));
+  }
+
+  /* Scroll reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+  }
+
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
